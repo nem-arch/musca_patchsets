@@ -1,0 +1,20 @@
+patchset 1 for musca-0.9.24
+
+instructions:
+  put 'musca_patchset.tar.gz' into the sourcedirectory, unpack it and execute 'prepare.sh'.
+  this patches all fixes into the sourcetree. (make sure it's unaltered - else patching could fail)
+  after that, proceed as you wish with 'make' and/or any other desired installmethod.
+  if you would like to omit a patch for some reason, just delete the according patchfile in advance.
+
+this patchset includes folling fixes:
+- fix incompatibility with dmenu-4.4:
+  configline for dmenu in config.h should now only contain dmenu parameters!
+  same goes for 'set dmenu <dmenu-parameters-only>' in '.musca_start'.
+  BE SURE TO TWEAK THAT BEFORE YOU RESTART MUSCA
+
+- fix for (flash-)fullscreen bug which messed up cycle:
+  this fixes some bugs from reports at musca-bugtracker which all originate from this single bug.
+
+- fix for muscacommand 'pad' to affect all windows on stack:
+  this essentially fixes a segfault which was caused by 'focus_follow_mouse' hovering a nonpadded window.
+
